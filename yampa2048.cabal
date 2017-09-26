@@ -31,10 +31,11 @@ executable yampa2048
                      , Rendering
                      , Types
                      , Graphics.Gloss.Interface.FRP.Yampa
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base
                      , random
-                     , gloss == 1.9.*
-                     , Yampa == 0.9.*
+                     , gloss
+                     , Yampa
+                     , titan-yampa-debugger
   hs-source-dirs:      src
   default-language:    Haskell2010
   ghc-options:         -Wall -O2

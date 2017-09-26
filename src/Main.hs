@@ -2,6 +2,8 @@ import System.Random (newStdGen, StdGen)
 import Graphics.Gloss
 import qualified Graphics.Gloss.Interface.IO.Game as G
 import Graphics.Gloss.Interface.FRP.Yampa
+import Graphics.Gloss.Interface.FRP.YampaDriver
+import Graphics.Gloss.Interface.FRP.YampaTitanDriver
 import FRP.Yampa (Event(..), SF, arr, tag, (>>>))
 
 import Types
@@ -35,7 +37,7 @@ mainSF g = parseInput >>> wholeGame g >>> drawGame
 main :: IO ()
 main = do
     g <- newStdGen
-    playYampa
+    driveYampa -- debugYampa -- driveYampa -- playYampa
       (InWindow "2048 game" (410, 500) (200, 200))
       white
       30
